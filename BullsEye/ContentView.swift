@@ -14,14 +14,22 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Color(rgbStruct: game.target)
-            Text("R: ??? G: ??? B: ???")
+            Text(guess.intString())
                 .padding()
 
             Color(rgbStruct: guess)
-            Text("R: 204 G: 76 B: 178")
+            Text("R: \(Int(guess.red * 255)) G: \(Int(guess.green * 255)) B: \(Int(guess.blue * 255))")
                 .padding()
 
-            Slider(value: .constant(0.5))
+            HStack {
+                Text("0")
+
+                Slider(value: $guess.red)
+                    .tint(.red)
+
+                Text("255")
+            }
+            .padding(.horizontal)
 
             Button("Hit me!") {
 
@@ -31,5 +39,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(guess: RGB(red: 0.8, green: 0.3, blue: 0.7))
+    ContentView(guess: RGB(red: 0.3, green: 0.3, blue: 0.7))
 }
