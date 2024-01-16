@@ -10,14 +10,24 @@ import SwiftUI
 struct ContentView: View {
     @State var game = Game()
     @State var guess: RGB
+    @State var showScore = false
 
     var body: some View {
         VStack {
-            Color(rgbStruct: game.target)
-            Text("R: ??? G: ??? B: ???")
-                .padding()
+            Circle()
+                .fill(Color(rgbStruct: game.target))
 
-            Color(rgbStruct: guess)
+            if !showScore {
+                Text("R: ??? G: ??? B: ???")
+                    .padding()
+            } else {
+                Text(game.target.intString())
+                    .padding()
+            }
+
+            Circle()
+                .fill(Color(rgbStruct: guess))
+
             Text(guess.intString())
                 .padding()
 
@@ -26,7 +36,16 @@ struct ContentView: View {
             ColorSlider(value: $guess.blue, trackColor: .blue)
 
             Button("Hit me!") {
-
+                showScore = true
+                game.check(guess: guess)
+            }
+            .alert(Text("Your Score"), isPresented: $showScore) {
+                Button("OK") {
+                    game.startNewRound()
+                    guess = RGB()
+                }
+            } message: {
+                Text(String(game.scoreRound))
             }
         }
     }
