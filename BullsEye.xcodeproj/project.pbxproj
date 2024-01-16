@@ -13,6 +13,7 @@
 		6BB486342B56963B00423899 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB486332B56963B00423899 /* Preview Assets.xcassets */; };
 		6BB4863C2B5698A700423899 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4863B2B5698A700423899 /* Game.swift */; };
 		6BB4863E2B5698C300423899 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4863D2B5698C300423899 /* RGB.swift */; };
+		6BB486402B56996B00423899 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4863F2B56996B00423899 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		6BB486332B56963B00423899 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BB4863B2B5698A700423899 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6BB4863D2B5698C300423899 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
+		6BB4863F2B56996B00423899 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				6BB4863B2B5698A700423899 /* Game.swift */,
 				6BB4863D2B5698C300423899 /* RGB.swift */,
+				6BB4863F2B56996B00423899 /* ColorExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				6BB4863C2B5698A700423899 /* Game.swift in Sources */,
 				6BB4862D2B56963900423899 /* BullsEyeApp.swift in Sources */,
 				6BB4863E2B5698C300423899 /* RGB.swift in Sources */,
+				6BB486402B56996B00423899 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
