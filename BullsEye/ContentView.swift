@@ -41,6 +41,7 @@ struct ContentView: View {
                     showScore = true
                     game.check(guess: guess)
                 }
+                .buttonStyle(NeuButtonStyle(width: 327, height: 48))
                 .alert(Text("Your Score"), isPresented: $showScore) {
                     Button("OK") {
                         game.startNewRound()
