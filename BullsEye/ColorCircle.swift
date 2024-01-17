@@ -12,12 +12,24 @@ struct ColorCircle: View {
     let size: CGFloat
 
     var body: some View {
-        Circle()
-            .fill(Color(rgbStruct: rgb))
-            .frame(width: size, height: size)
+        ZStack {
+            Circle()
+                .fill(Color.element)
+                .northWestShadow()
+
+            Circle()
+                .fill(Color(rgbStruct: rgb))
+                .padding(20)
+        }
+        .frame(width: size, height: size)
     }
 }
 
 #Preview {
-    ColorCircle(rgb: RGB(), size: 300)
+    ZStack {
+        Color.element
+        ColorCircle(rgb: RGB(), size: 200)
+    }
+    .frame(width: 300, height: 300)
+    .previewLayout(.sizeThatFits)
 }
