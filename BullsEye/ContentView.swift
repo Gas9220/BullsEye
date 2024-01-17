@@ -13,37 +13,42 @@ struct ContentView: View {
     @State var showScore = false
 
     var body: some View {
-        VStack {
-            ColorCircle(rgb: game.target, size: 200)
+        ZStack {
+            Color.element
+                .ignoresSafeArea()
 
-            if !showScore {
-                Text("R: ??? G: ??? B: ???")
-                    .padding()
-            } else {
-                Text(game.target.intString())
-                    .padding()
-            }
+            VStack {
+                ColorCircle(rgb: game.target, size: 200)
 
-            ColorCircle(rgb: guess, size: 200)
-
-            Text(guess.intString())
-                .padding()
-
-            ColorSlider(value: $guess.red, trackColor: .red)
-            ColorSlider(value: $guess.green, trackColor: .green)
-            ColorSlider(value: $guess.blue, trackColor: .blue)
-
-            Button("Hit me!") {
-                showScore = true
-                game.check(guess: guess)
-            }
-            .alert(Text("Your Score"), isPresented: $showScore) {
-                Button("OK") {
-                    game.startNewRound()
-                    guess = RGB()
+                if !showScore {
+                    Text("R: ??? G: ??? B: ???")
+                        .padding()
+                } else {
+                    Text(game.target.intString())
+                        .padding()
                 }
-            } message: {
-                Text(String(game.scoreRound))
+
+                ColorCircle(rgb: guess, size: 200)
+
+                Text(guess.intString())
+                    .padding()
+
+                ColorSlider(value: $guess.red, trackColor: .red)
+                ColorSlider(value: $guess.green, trackColor: .green)
+                ColorSlider(value: $guess.blue, trackColor: .blue)
+
+                Button("Hit me!") {
+                    showScore = true
+                    game.check(guess: guess)
+                }
+                .alert(Text("Your Score"), isPresented: $showScore) {
+                    Button("OK") {
+                        game.startNewRound()
+                        guess = RGB()
+                    }
+                } message: {
+                    Text(String(game.scoreRound))
+                }
             }
         }
     }
