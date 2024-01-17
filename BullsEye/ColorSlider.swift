@@ -20,6 +20,7 @@ struct ColorSlider: View {
 
             Text("255")
         }
+        .font(.subheadline)
         .padding(.horizontal)
     }
 }
