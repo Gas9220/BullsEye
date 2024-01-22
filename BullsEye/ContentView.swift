@@ -32,7 +32,7 @@ struct ContentView: View {
                                   height: proxy.size.height * labelHeight)
                         .padding()
                     } else {
-                        BevelText(text: game.target.intString(),
+                        BevelText(text: game.target.intString,
                                   width: proxy.size.width * labelWidth,
                                   height: proxy.size.height * labelHeight)
                         .padding()
@@ -40,7 +40,7 @@ struct ContentView: View {
 
                     ColorCircle(rgb: guess, size: proxy.size.height * circleSize)
 
-                    BevelText(text: guess.intString(),
+                    BevelText(text: guess.intString,
                               width: proxy.size.width * labelWidth,
                               height: proxy.size.height * labelHeight)
                     .padding()
