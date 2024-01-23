@@ -14,11 +14,12 @@ struct ColorSlider: View {
     var body: some View {
         HStack {
             Text("0")
-
+                .accessibilityHidden(true)
             Slider(value: $value)
                 .tint(trackColor)
-
+                .accessibilityValue(String(describing: trackColor) + " " +  String(Int(value * 255)))
             Text("255")
+                .accessibilityHidden(true)
         }
         .font(.subheadline)
         .padding(.horizontal)

@@ -20,27 +20,35 @@ struct SuccessView: View {
             VStack {
                 Image("wand")
                     .resizable()
+                    .accessibilityHidden(true)
                     .frame(width: imageSize, height: imageSize)
+
                 Text("Congratulations!")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .padding(.bottom)
+
                 VStack(spacing: 10) {
                     Text("You scored \(score) points on this color.")
                         .padding(.bottom)
+
                     ColorText(
-                        text: "Target: " + target.intString,
+                        text: "Target: " + target.intString(),
                         bkgd: Color(rgbStruct: target))
+
                     ColorText(
-                        text: "Guess: " + guess.intString,
+                        text: "Guess: " + guess.intString(),
                         bkgd: Color(rgbStruct: guess))
                 }
                 .font(.title3)
                 .foregroundColor(Color("grayText"))
                 .multilineTextAlignment(.center)
             }
+            .accessibilityElement(children: .combine)
+
             VStack(spacing: 20) {
                 Spacer()
+                
                 Button("Try another one?") {
                     game.startNewRound()
                     guess = RGB()
